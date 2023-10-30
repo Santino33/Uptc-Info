@@ -3,7 +3,7 @@ package Vista;
 import javax.swing.*;
 import java.awt.*;
 
-public class VentanaPrincipal extends JFrame {
+public class VentanaSeleccion extends JFrame {
     private JPanel panelEncabezado;
     private JLabel lbltitulo;
 
@@ -16,7 +16,7 @@ public class VentanaPrincipal extends JFrame {
     private String tipografia;
 
 
-    public VentanaPrincipal() {
+    public VentanaSeleccion() {
         this.setTitle("Seleccion");
         this.setSize(400, 200);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
