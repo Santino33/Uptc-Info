@@ -3,7 +3,7 @@ package Vista;
 import javax.swing.*;
 import java.awt.*;
 
-public class VentanaSeleccion extends JFrame {
+public class VentanaCrearUsuario extends JFrame {
     private JPanel panelEncabezado;
     private JLabel lbltitulo;
 
@@ -15,9 +15,8 @@ public class VentanaSeleccion extends JFrame {
     private JButton btnCrearUsuario;
     private String tipografia;
 
-
-    public VentanaSeleccion() {
-        this.setTitle("Seleccion");
+    public VentanaCrearUsuario(){
+        this.setTitle("Crear Usuario");
         this.setSize(400, 200);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setLocationRelativeTo(null);
@@ -35,15 +34,15 @@ public class VentanaSeleccion extends JFrame {
 
         //panel informativo
         panelTexto = new JPanel();
-        lblTexto = new JLabel("¿Que desea hacer en la aplicacion?");
+        lblTexto = new JLabel("¿Que tipo de usuario desea crear?");
         lblTexto.setFont(new Font(tipografia, Font.PLAIN, 12));
         panelTexto.add(lblTexto);
 
         //panel botones
         botonesPanel = new JPanel();
         botonesPanel.setLayout(new GridLayout(1, 2));
-        btnCrearUsuario = new JButton("Crear usuario");
-        btnVerInformacion = new JButton("Ver informacion");
+        btnCrearUsuario = new JButton("Estudiante");
+        btnVerInformacion = new JButton("Administrativo");
         botonesPanel.add(btnVerInformacion);
         botonesPanel.add(btnCrearUsuario);
 
