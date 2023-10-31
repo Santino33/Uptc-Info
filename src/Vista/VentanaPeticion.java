@@ -7,8 +7,8 @@ public class VentanaPeticion extends JFrame{
     private JPanel panelTitulo;
     private JLabel lblTitulo;
     private JPanel panelInputs;
-    private JTextField inputCedula;
-    private JTextField inputContrasena;
+    private InputText inputCedula;
+    private InputText inputContrasena;
     private JPanel panelBoton;
     private JButton boton;
     private String tipografia;
@@ -35,12 +35,12 @@ public class VentanaPeticion extends JFrame{
         panelInputs.setLayout(new GridLayout(2, 1));
 
         //input cedula
-        inputCedula = new JTextField();
+        inputCedula = new InputText();
         panelInputs.add(new JLabel("Cédula:"));
         panelInputs.add(inputCedula);
 
         //input contrasena
-        inputContrasena = new JTextField();
+        inputContrasena = new InputText();
         panelInputs.add(new JLabel("Contraseña:"));
         panelInputs.add(inputContrasena);
 
@@ -54,5 +54,9 @@ public class VentanaPeticion extends JFrame{
         this.add(panelBoton, BorderLayout.SOUTH);
 
         this.setVisible(true);
+    }
+
+    public JButton getBoton() {
+        return boton;
     }
 }
