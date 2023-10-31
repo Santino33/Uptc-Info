@@ -3,7 +3,7 @@ package Vista;
 import javax.swing.*;
 import java.awt.*;
 
-public class VentanaFormularioEstudiante extends JFrame {
+public class VentanaFormularioAdministrativo extends JFrame{
     private JPanel panelTitulo;
     private JLabel lblTitulo;
     private JPanel panelCampos;
@@ -13,7 +13,7 @@ public class VentanaFormularioEstudiante extends JFrame {
     private JPanel panelBoton;
     private JButton boton;
 
-    public VentanaFormularioEstudiante(){
+    public VentanaFormularioAdministrativo(){
         this.setTitle("Crear Usuario");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setLocationRelativeTo(null);
@@ -22,7 +22,7 @@ public class VentanaFormularioEstudiante extends JFrame {
         //panel titulo
         panelTitulo = new JPanel();
         panelTitulo.setBackground(Color.orange);
-        lblTitulo = new JLabel("Ingrese los datos del nuevo estudiante");
+        lblTitulo = new JLabel("Ingrese los datos del nuevo funcionario");
         panelTitulo.add(lblTitulo);
 
         //panel inputs
@@ -38,10 +38,9 @@ public class VentanaFormularioEstudiante extends JFrame {
                 case 1: lblCampo.setText("Contraseña :");
                 case 2: lblCampo.setText("Nombre :");
                 case 3: lblCampo.setText("Apellido :");
-                case 4: lblCampo.setText("Semestre :");
-                case 5: lblCampo.setText("Edad :");
-                case 6: lblCampo.setText("Genero :");
-                case 7: lblCampo.setText("Materias en curso :");
+                case 4: lblCampo.setText("Genero :");
+                case 6: lblCampo.setText("Cargo :");
+                case 7: lblCampo.setText("Sueldo :");
             }
             input = new InputText();
             panelCampos.add(lblCampo);
@@ -56,7 +55,6 @@ public class VentanaFormularioEstudiante extends JFrame {
         this.add(panelTitulo, BorderLayout.NORTH);
         this.add(panelCampos, BorderLayout.CENTER);
         this.add(panelBoton, BorderLayout.SOUTH);
-
     }
 
     public JButton getBoton() {
