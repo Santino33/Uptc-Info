@@ -43,7 +43,9 @@ public class VentanaSeleccion extends JFrame {
         botonesPanel = new JPanel();
         botonesPanel.setLayout(new GridLayout(1, 2));
         btnCrearUsuario = new JButton("Crear usuario");
+        btnCrearUsuario.setActionCommand("crear usuario");
         btnVerInformacion = new JButton("Ver informacion");
+        btnVerInformacion.setActionCommand("ver informacion");
         botonesPanel.add(btnVerInformacion);
         botonesPanel.add(btnCrearUsuario);
 

@@ -50,6 +50,7 @@ public class VentanaFormularioAdministrativo extends JFrame{
         //Panel boton
         panelBoton = new JPanel();
         boton = new JButton("Crear usuario");
+        boton.setActionCommand("crear administrativo");
         panelBoton.add(boton);
 
         this.add(panelTitulo, BorderLayout.NORTH);

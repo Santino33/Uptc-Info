@@ -37,7 +37,7 @@ public class VentanaMuestra extends JFrame{
                 lblCampo1.setFont(new Font(tipografia, Font.BOLD, 12));
                 panelDatos.add(lblCampo1);
 
-                lblCampo2 = new JLabel(entry.getValue());
+                lblCampo2 = new JLabel(" ---- " + entry.getValue());
                 lblCampo2.setFont(new Font(tipografia, Font.PLAIN, 12));
                 panelDatos.add(lblCampo2);
             }
@@ -50,6 +50,7 @@ public class VentanaMuestra extends JFrame{
         //Panel boton
         botonPanel = new JPanel();
         salir = new JButton("Volver");
+        salir.setActionCommand("volver");
         botonPanel.add(salir);
 
         //Agregar paneles

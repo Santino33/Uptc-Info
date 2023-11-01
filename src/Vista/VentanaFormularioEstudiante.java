@@ -55,6 +55,7 @@ public class VentanaFormularioEstudiante extends JFrame {
         //Panel boton
         panelBoton = new JPanel();
         boton = new JButton("Crear usuario");
+        boton.setActionCommand("crear estudiante");
         panelBoton.add(boton);
 
         this.add(panelTitulo, BorderLayout.NORTH);

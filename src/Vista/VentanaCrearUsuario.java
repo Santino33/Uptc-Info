@@ -11,8 +11,8 @@ public class VentanaCrearUsuario extends JFrame {
     private JLabel lblTexto;
 
     private JPanel botonesPanel;
-    private JButton btnVerInformacion;
-    private JButton btnCrearUsuario;
+    private JButton btnCrearAdministrativo;
+    private JButton btnCrearEstudiante;
     private String tipografia;
 
     public VentanaCrearUsuario(){
@@ -20,6 +20,7 @@ public class VentanaCrearUsuario extends JFrame {
         this.setSize(400, 200);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setLocationRelativeTo(null);
+        GridBagConstraints gbc = new GridBagConstraints();
 
 
         //Panel encabezado
@@ -38,13 +39,24 @@ public class VentanaCrearUsuario extends JFrame {
         lblTexto.setFont(new Font(tipografia, Font.PLAIN, 12));
         panelTexto.add(lblTexto);
 
-        //panel botones
+        //panel botones y action command
         botonesPanel = new JPanel();
         botonesPanel.setLayout(new GridLayout(1, 2));
-        btnCrearUsuario = new JButton("Estudiante");
-        btnVerInformacion = new JButton("Administrativo");
-        botonesPanel.add(btnVerInformacion);
-        botonesPanel.add(btnCrearUsuario);
+        btnCrearEstudiante = new JButton("Estudiante");
+        btnCrearEstudiante.setActionCommand("crear estudiante");
+
+        btnCrearAdministrativo = new JButton("Administrativo");
+        btnCrearAdministrativo.setActionCommand("crear administrativo");
+
+        //
+        gbc.gridx = 1; // Posición x
+        gbc.gridy = 0; // Posición y
+        gbc.weightx = 1; // Espacio horizontal
+        gbc.anchor = GridBagConstraints.CENTER; // Alinear al centro
+        gbc.insets = new Insets(0, 5, 0, 0);
+        botonesPanel.add(btnCrearEstudiante, gbc);
+        botonesPanel.add(btnCrearAdministrativo, gbc);
+
 
         //agregar panel encabezado y botones
         this.getContentPane().setLayout(new BorderLayout());
@@ -55,11 +67,11 @@ public class VentanaCrearUsuario extends JFrame {
         this.setVisible(true);
     }
 
-    public JButton getBtnVerInformacion() {
-        return btnVerInformacion;
+    public JButton getBtnCrearAdministrativo() {
+        return btnCrearAdministrativo;
     }
 
-    public JButton getBtnCrearUsuario() {
-        return btnCrearUsuario;
+    public JButton getBtnCrearEstudiante() {
+        return btnCrearEstudiante;
     }
 }

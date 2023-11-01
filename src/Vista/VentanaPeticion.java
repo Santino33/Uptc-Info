@@ -47,6 +47,7 @@ public class VentanaPeticion extends JFrame{
         //boton
         panelBoton = new JPanel();
         boton = new JButton("Ingresar");
+        boton.setActionCommand("ver datos");
         panelBoton.add(boton);
 
         this.add(panelTitulo, BorderLayout.NORTH);
