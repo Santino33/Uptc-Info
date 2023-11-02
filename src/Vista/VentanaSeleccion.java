@@ -3,7 +3,7 @@ package Vista;
 import javax.swing.*;
 import java.awt.*;
 
-public class VentanaSeleccion extends JFrame {
+public class VentanaSeleccion extends JFrame implements IVista{
     private JPanel panelEncabezado;
     private JLabel lbltitulo;
 
@@ -54,8 +54,11 @@ public class VentanaSeleccion extends JFrame {
         this.add(panelEncabezado, BorderLayout.NORTH);
         this.add(panelTexto, BorderLayout.CENTER);
         this.add(botonesPanel, BorderLayout.SOUTH);
+    }
 
-        this.setVisible(true);
+    @Override
+    public void mostrar(boolean visible) {
+        this.setVisible(visible);
     }
 
     public JButton getBtnVerInformacion() {

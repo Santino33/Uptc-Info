@@ -3,7 +3,7 @@ package Vista;
 import javax.swing.*;
 import java.awt.*;
 
-public class VentanaCrearUsuario extends JFrame {
+public class VentanaCrearUsuario extends JFrame implements IVista{
     private JPanel panelEncabezado;
     private JLabel lbltitulo;
 
@@ -43,10 +43,10 @@ public class VentanaCrearUsuario extends JFrame {
         botonesPanel = new JPanel();
         botonesPanel.setLayout(new GridLayout(1, 2));
         btnCrearEstudiante = new JButton("Estudiante");
-        btnCrearEstudiante.setActionCommand("crear estudiante");
+        btnCrearEstudiante.setActionCommand("formulario estudiante");
 
         btnCrearAdministrativo = new JButton("Administrativo");
-        btnCrearAdministrativo.setActionCommand("crear administrativo");
+        btnCrearAdministrativo.setActionCommand("formulario administrativo");
 
         //
         gbc.gridx = 1; // Posición x
@@ -64,7 +64,11 @@ public class VentanaCrearUsuario extends JFrame {
         this.add(panelTexto, BorderLayout.CENTER);
         this.add(botonesPanel, BorderLayout.SOUTH);
 
-        this.setVisible(true);
+    }
+
+    @Override
+    public void mostrar(boolean visible) {
+        this.setVisible(visible);
     }
 
     public JButton getBtnCrearAdministrativo() {

@@ -3,7 +3,7 @@ package Vista;
 import javax.swing.*;
 import java.awt.*;
 
-public class VentanaFormularioEstudiante extends JFrame {
+public class VentanaFormularioEstudiante extends JFrame implements IVista{
     private JPanel panelTitulo;
     private JLabel lblTitulo;
     private JPanel panelCampos;
@@ -47,9 +47,6 @@ public class VentanaFormularioEstudiante extends JFrame {
 
             panelCampos.add(lblCampo);
             panelCampos.add(input);
-            pack();
-            this.setVisible(true);
-            repaint();
         }
 
         //Panel boton
@@ -63,7 +60,11 @@ public class VentanaFormularioEstudiante extends JFrame {
         this.add(panelBoton, BorderLayout.SOUTH);
 
         pack();
-        this.setVisible(true);
+    }
+
+    @Override
+    public void mostrar(boolean visible) {
+        this.setVisible(visible);
     }
 
     public JButton getBoton() {

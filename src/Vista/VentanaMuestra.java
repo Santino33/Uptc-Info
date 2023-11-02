@@ -7,7 +7,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
-public class VentanaMuestra extends JFrame{
+public class VentanaMuestra extends JFrame implements IVista{
     private JPanel panelDatos;
     private JScrollPane scrollPane;
     private JLabel lblCampo1;
@@ -16,17 +16,21 @@ public class VentanaMuestra extends JFrame{
     private JPanel botonPanel;
     private JButton salir;
 
-    public VentanaMuestra(HashMap<String, String> datos){
-
+    public VentanaMuestra(){
         this.setTitle("Informacion de usuario");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setLocationRelativeTo(null);
         this.setLayout(new BorderLayout());
 
-        //panel datos
         panelDatos = new JPanel();
-        panelDatos.setLayout(new GridLayout(datos.size(), 2));
+        botonPanel = new JPanel();
+        salir = new JButton("Volver");
         tipografia = "Dialog";
+    }
+
+    public void mostrarDatos(HashMap<String, String> datos){
+        //panel datos
+        panelDatos.setLayout(new GridLayout(datos.size(), 2));
 
         //Se llena con los datos proporcionados
         for (int i = 0; i < datos.size(); i++){
@@ -48,9 +52,8 @@ public class VentanaMuestra extends JFrame{
         getContentPane().add(scrollPane);
 
         //Panel boton
-        botonPanel = new JPanel();
-        salir = new JButton("Volver");
-        salir.setActionCommand("volver");
+
+        salir.setActionCommand("volver inicio");
         botonPanel.add(salir);
 
         //Agregar paneles
@@ -59,7 +62,11 @@ public class VentanaMuestra extends JFrame{
 
         //Ajustar el tamaño de los componentes automaticamente
         pack();
-        this.setVisible(true);
+    }
+
+    @Override
+    public void mostrar(boolean visible) {
+        this.setVisible(visible);
     }
 
     private <K, V> Map.Entry<K, V> getElementByIndex(HashMap<K, V> hashMap, int index) {
@@ -72,6 +79,8 @@ public class VentanaMuestra extends JFrame{
         }
         return null;
     }
+
+
 
     public JButton getSalir() {
         return salir;

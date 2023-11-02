@@ -3,7 +3,7 @@ package Vista;
 import javax.swing.*;
 import java.awt.*;
 
-public class VentanaFormularioAdministrativo extends JFrame{
+public class VentanaFormularioAdministrativo extends JFrame implements IVista{
     private JPanel panelTitulo;
     private JLabel lblTitulo;
     private JPanel panelCampos;
@@ -58,7 +58,11 @@ public class VentanaFormularioAdministrativo extends JFrame{
         this.add(panelBoton, BorderLayout.SOUTH);
 
         pack();
-        this.setVisible(true);
+    }
+
+    @Override
+    public void mostrar(boolean visible) {
+        this.setVisible(visible);
     }
 
     public JButton getBoton() {
