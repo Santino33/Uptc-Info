@@ -8,7 +8,13 @@ public class VentanaFormularioAdministrativo extends JFrame implements IVista{
     private JLabel lblTitulo;
     private JPanel panelCampos;
     private JLabel lblCampo;
-    private InputText input;
+    private InputText inputCedula;
+    private InputText inputContrasena;
+    private InputText inputNombre;
+    private InputText inputApellido;
+    private InputText inputGenero;
+    private InputText inputCargo;
+    private InputText inputSueldo;
     private String tipografia;
     private JPanel panelBoton;
     private JButton boton;
@@ -31,20 +37,60 @@ public class VentanaFormularioAdministrativo extends JFrame implements IVista{
         tipografia = "Dialog";
 
         for (int i = 0; i < 7; i++){
-            input = new InputText();
             lblCampo = new JLabel();
             lblCampo.setFont(new Font(tipografia, Font.PLAIN, 12));
             switch (i){
-                case 0 -> lblCampo.setText("Cedula :");
-                case 1 -> lblCampo.setText("Contraseña :");
-                case 2 -> lblCampo.setText("Nombre :");
-                case 3 -> lblCampo.setText("Apellido :");
-                case 4 -> lblCampo.setText("Genero :");
-                case 5 -> lblCampo.setText("Cargo :");
-                case 6 -> lblCampo.setText("Sueldo :");
+                case 0 : {
+                    lblCampo.setText("Cedula :");
+                    inputCedula = new InputText();
+                    panelCampos.add(lblCampo);
+                    panelCampos.add(inputCedula);
+                    break;
+                }
+                case 1 : {
+                    lblCampo.setText("Contraseña :");
+                    inputContrasena = new InputText();
+                    panelCampos.add(lblCampo);
+                    panelCampos.add(inputContrasena);
+                    break;
+                }
+                case 2 : {
+                    lblCampo.setText("Nombre :");
+                    inputNombre = new InputText();
+                    panelCampos.add(lblCampo);
+                    panelCampos.add(inputNombre);
+                    break;
+                }
+                case 3 : {
+                    lblCampo.setText("Apellido :");
+                    inputApellido = new InputText();
+                    panelCampos.add(lblCampo);
+                    panelCampos.add(inputApellido);
+                    break;
+                }
+                case 4 : {
+                    lblCampo.setText("Genero :");
+                    inputGenero = new InputText();
+                    panelCampos.add(lblCampo);
+                    panelCampos.add(inputGenero);
+                    break;
+                }
+                case 5 : {
+                    lblCampo.setText("Cargo :");
+                    inputCargo = new InputText();
+                    panelCampos.add(lblCampo);
+                    panelCampos.add(inputCargo);
+                    break;
+                }
+                case 6 : {
+                    lblCampo.setText("Sueldo :");
+                    inputSueldo = new InputText();
+                    panelCampos.add(lblCampo);
+                    panelCampos.add(inputSueldo);
+                    break;
+                }
             }
-            panelCampos.add(lblCampo);
-            panelCampos.add(input);
+
         }
 
         //Panel boton
@@ -69,7 +115,31 @@ public class VentanaFormularioAdministrativo extends JFrame implements IVista{
         return boton;
     }
 
-    public InputText getInput() {
-        return input;
+    public InputText getInputCedula() {
+        return inputCedula;
+    }
+
+    public InputText getInputContrasena() {
+        return inputContrasena;
+    }
+
+    public InputText getInputNombre() {
+        return inputNombre;
+    }
+
+    public InputText getInputApellido() {
+        return inputApellido;
+    }
+
+    public InputText getInputGenero() {
+        return inputGenero;
+    }
+
+    public InputText getInputCargo() {
+        return inputCargo;
+    }
+
+    public InputText getInputSueldo() {
+        return inputSueldo;
     }
 }
